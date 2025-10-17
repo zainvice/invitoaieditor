@@ -1,0 +1,99 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clean professional dark theme with blue accent */
+    --background: 0 0% 0%; /* Pure black background */
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --primary: 214 100% 60%; /* Bright blue accent */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 224 76% 48%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-foreground;
+    font-feature-settings: "kern";
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Add drop shadow to headlines */
+  h1, h2, h3 {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Reduce animation speeds to 300ms */
+.animated-btn,
+.hover\:scale-105,
+button {
+  transition: all 300ms ease-in-out;
+}
+
+/* Add animation with 300ms duration */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-out forwards;
+}
+
+/* Add smooth hover effect for buttons with glow */
+button:hover {
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Simple and clean card styles */
+.card-hover {
+  transition: all 300ms ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+::-webkit-scrollbar {
+  display: none;
+}
